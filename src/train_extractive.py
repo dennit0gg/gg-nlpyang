@@ -206,7 +206,7 @@ def train_ext(args, device_id):
 def train_single_ext(args, device_id):
     init_logger(args.log_file)
 
-    device = "cpu" if args.visible_gpus == '0' else "cuda"
+    device = "cpu" if args.visible_gpus == '-1' else "cuda"
     logger.info('Device ID %d' % device_id)
     logger.info('Device %s' % device)
     torch.manual_seed(args.seed)
